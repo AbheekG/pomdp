@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torchviz import make_dot
+# from torchviz import make_dot
 
 import models
 import constants as ck
@@ -34,8 +34,8 @@ def train(model, max_cost=ck.D, horizon=ck.H, batch_size=128, epochs=100):
 		cum_cost = torch.zeros(batch_size, 1)
 
 		# Init cell and hidden state of LSTM to 0.
-		cell = torch.zeros(batch_size, BeliefLSTM.hidden)
-		hidden = torch.zeros(batch_size, BeliefLSTM.hidden)
+		cell = torch.zeros(batch_size, models.BeliefLSTM.hidden)
+		hidden = torch.zeros(batch_size, models.BeliefLSTM.hidden)
 
 		# Forward pass
 		for t in range(horizon):
